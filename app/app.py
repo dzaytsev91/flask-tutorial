@@ -28,15 +28,15 @@ def init_db():
 
     conn.execute(
         "INSERT INTO challenges (title, content, link) VALUES (?, ?, ?)",
-                ('First challenges', 'Content for the first post', "ozon.ru"),
+                ('First challenges', 'Content for the first post', "https://ozon.ru"),
     )
 
     conn.execute("INSERT INTO challenges (title, content, link) VALUES (?, ?, ?)",
-                ('Second Post', 'Content for the second post', "ya.com")
+                ('Second Post', 'Content for the second post', "https://ya.com")
     )
 
     conn.execute("INSERT INTO challenges (title, content, link) VALUES (?, ?, ?)",
-                 ('Third Post', 'contest', "yandex.com")
+                 ('Third Post', 'contest', "https://yandex.com")
                  )
 
     conn.commit()
@@ -51,7 +51,7 @@ def hello():  # call method hello
     return render_template("index.html", challenges=challenges)
 
 
-@app.route("/<challenge_id>")  # at the end point /
+@app.route("/detail/<challenge_id>")  # at the end point /
 def detail(challenge_id):  # call method hello
     conn = get_db_connection()
     challenge = conn.execute('SELECT * FROM challenges WHERE id = {}'.format(challenge_id)).fetchone()
