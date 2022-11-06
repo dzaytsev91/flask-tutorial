@@ -151,28 +151,9 @@
       </div>
 
 
-      <h2>Section title</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Title</th>з
-              <th>Content</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-           {% for challenge in challenges %}
-              <tr>
-                <td>{{ challenge.id }}</td>
-                <td><a href="{{url_for('detail', challenge_id=challenge.id)}}">{{ challenge.title }}</a></td>
-                <td>{{ challenge.content }}</td>
-                <td><a href="{{ challenge.link }}">{{ challenge.link| replace("https://","")git }}</a></td>
-              </tr>
-           {% endfor %}
-          </tbody>
-        </table>
+      <h2>Chal detail</h2>
+      <div>
+        {{challenge.title}}
       </div>
     </main>
   </div>
