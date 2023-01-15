@@ -168,7 +168,7 @@
                 <td>{{ challenge.id }}</td>
                 <td><a href="{{url_for('detail', challenge_id=challenge.id)}}">{{ challenge.title }}</a></td>
                 <td>{{ challenge.content }}</td>
-                <td><a href="{{ challenge.link }}">{{ challenge.link| replace("https://","")git }}</a></td>
+                <td><a href="{{ challenge.link }}">{{ challenge.link| replace("https://","") }}</a></td>
               </tr>
            {% endfor %}
           </tbody>
